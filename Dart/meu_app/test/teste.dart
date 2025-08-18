@@ -3,7 +3,5 @@ void executarAcao(Function acao){
 }
 
 void main(){
-  var mensagemAcao = () => print("Executando ação!");
 
-  executarAcao(mensagemAcao);
 }
