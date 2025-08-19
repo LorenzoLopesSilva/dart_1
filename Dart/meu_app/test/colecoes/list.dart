@@ -16,5 +16,18 @@ void main(){
   nomes.removeAt(0); //Remover pelo indice
   print(nomes.contains('Carlos'));
   print(nomes.length);
-  //teste
+
+  //interando listas
+  List<int> num = [10, 20, 30];
+
+  for (var n in num){
+    print(n);
+  }
+
+  num.forEach((n) => print('Numero: $n'));
+
+  //O .map gera uma nova sequencia aplicando uma função
+  var dobrados = num.map((n) => n * 2).toList();
+
+  print(dobrados);
 }
