@@ -1,0 +1,3 @@
+Override = sobrescrever
+Em OOP, quer dizer substituir a implementação original
+de um metodo herdado por uma versão nova, adaptada.
