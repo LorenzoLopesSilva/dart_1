@@ -11,27 +11,34 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       title:'Hello World',
-      home: const HomePage(),
+      home: const BotaoCurtir(),
     );
   }
 }
 
-class HomePage extends StatelessWidget{
-  const HomePage({super.key});
+class BotaoCurtir extends StatefulWidget{
+  const BotaoCurtir({super.key});
+  
+  @override
+  State<BotaoCurtir> createState() => _BotaoCurtirState();
+}
+
+class _BotaoCurtirState extends State<BotaoCurtir>{
+  bool estaCurtido = false;
+  
+  void alternarCurtida(){
+    setState((){
+      estaCurtido = !estaCurtido;
+    });
+  }
   
   @override
   Widget build(BuildContext context){
-    return Scaffold(
-      backgroundColor: Colors.green,
-      appBar: AppBar(
-        title: Text("Titulo",
-                   style: TextStyle(
-                      color: Colors.green,
-                   )),
-      ),
-      body: Center(
-    
-      )
+    return IconButton(
+      onPressed: alternarCurtida,
+      color: Colors.red,
+      icon: Icon(estaCurtido ? Icons.favorite : Icons.favorite_border),
+      tooltip: estaCurtido ? 'Remover curtida' : 'Curtir'
     );
   }
 }
